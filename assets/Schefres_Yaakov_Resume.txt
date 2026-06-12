@@ -1,0 +1,29 @@
+Proactive Systems Engineer, Space Vehicle Architect, and Manager with 10 years of industry experience seeking an opportunity to lead mission-focused success and influence innovative solutions to complex technical problems. Skilled in Cost Account Management, Class B/C execution, and Model-Based Engineering.
+
+RELEVANT EXPERIENCE	Northrop Grumman Corporation: 2016-Present
+Systems Engineering Lead and Chief Architect, Product Line Bus	September 2023 – Present
+    • Shaped vision for next generation bus product line directly supporting a corporate priority win worth $2B+
+    • Cost Account Manager for $2M+ and 6 full time employees
+    • Trailblazed novel methods of customer deliverables, rapid analysis cycle development, and V&V implementation strategy to greatly reduce both recurring and non-recurring engineering costs by more than $10M
+    • Led Model-Based Engineering development utilizing Cameo, realizing schedule efficiency by 20%
+Section Manager, Space System Definition Department	January 2022 – Present
+    • Managed 11 individual contributors and 1 assistant section manager, providing technical resources, career growth support, and tools to aid in their contribution to successful program capture and execution
+    • Led Space Vehicle and Bus Internal Review Team providing coordination of over 30 SMEs and functional reviews while providing my own inputs to the SE portion of the review
+Space Vehicle Architect, Restricted Program	July 2021 – September 2023
+    • Awarded Employee of the Month for contributions towards customer intimacy and design integration
+    • Supported successful capture of sole source award for a program critical to corporate business strategy
+    • Defined and modeled space vehicle architecture, CONOPS, and space element specification using Cameo
+    • Established Agile practices across the organization, leading to operational efficiencies in a fast paced program environment
+    • Implemented trade to reduce cost by more than $9M from baselined technical solution
+Mission Engineer, Restricted Capture Effort	January 2021 – February 2022
+    • Designed and developed a space vehicle constellation Python tool utilizing genetic algorithms as a novel approach to architecture optimization
+    • Managed assignments for a team of 5 engineers to develop the space constellation architecture tool
+    • Developed and delivered MATLAB and STK analysis and presented it to customer
+Project Manager, Internal Research and Development	September 2020 – February 2021
+    • Led a team of 3 engineers with a $50K budget to explore the application of a drone to perform 3D mapping and ISR to support the warfighter, as featured on NGC’s Front Webpage
+    • Hosted a demonstration and delivered whitepaper of Pathfinder’s capabilities
+EDUCATION
+University of Southern California, Los Angeles, CA	May 2020
+Masters of Science in Aerospace Engineering
+California Polytechnic State University, San Luis Obispo, CA	June 2017
+Bachelor of Science in Aerospace Engineering, Astronautics Concentration
