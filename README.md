@@ -1,2 +1,2 @@
-# portfolio.github.io
+# portfolio
 Yaakov Schefres's Portfolio
