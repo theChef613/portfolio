@@ -18,6 +18,7 @@
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#experience" class="nav-link">Experience</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
                 <li><a href="#blog" class="nav-link">Blog</a></li>
                 <li><a href="#education" class="nav-link">Education</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -34,7 +35,7 @@
             <p class="hero-description">
                 Proactive Systems Engineer with 10+ years of industry experience leading mission-focused projects and 
                 delivering innovative solutions to complex technical challenges. Expert in Cost Account Management, 
-                Model-Based Engineering, and driving program success at Northrop Grumman.
+                Model-Based Engineering, and driving program success.
             </p>
             <div class="hero-cta">
                 <a href="#contact" class="btn btn-primary">Get in Touch</a>
@@ -43,9 +44,9 @@
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section class="experience-section" id="experience">
-        <div class="container">
+    <!-- Work Section: Experience + Blog & 3D Design -->
+    <div class="portfolio-layout container">
+        <section class="experience-section" id="experience">
             <h2 class="section-title">Professional Experience</h2>
             <p class="section-subtitle">Northrop Grumman Corporation (2016 – Present)</p>
             
@@ -123,8 +124,50 @@
                     </ul>
                 </article>
             </div>
+        </section>
+
+        <div class="portfolio-side-content">
+            <section class="blog-section" id="blog">
+                <h2 class="section-title">Insights & Updates</h2>
+                <p class="section-subtitle">Latest thoughts on systems engineering and space technologies.</p>
+                <div class="blog-grid">
+                    <article class="blog-card">
+                        <div class="blog-card-content">
+                            <span class="blog-date">June 17, 2024</span>
+                            <h3 class="blog-title">Systems Engineering Approach to Thermal Vacuum (TVAC) Testing</h3>
+                            <p>
+                                Navigating the complexities of Thermal Vacuum environments requires a rigorous Systems Engineering approach. 
+                                By integrating robust requirement management and iterative design loops, we can ensure that space systems 
+                                remain resilient under extreme temperature fluctuations and vacuum conditions. This post explores our 
+                                methodology for pre-test verification and risk mitigation in critical program segments.
+                            </p>
+                            <a href="blog_tvac.html" class="blog-link">Read More</a>
+                        </article>
+                    </article>
+                    <article class="blog-card">
+                        <div class="blog-card-content">
+                            <span class="blog-date">June 19, 2024</span>
+                            <h3 class="blog-title">Accelerating Engineering with Digital Ecosystems and Authoritative Source of Truth (ASOT)</h3>
+                            <p>
+                                In modern systems engineering, the greatest bottleneck is often not a lack of technical capability, but the friction caused by information silos. This post explores how leveraging digital ecosystems can accelerate the engineering process while maintaining a robust Authoritative Source of Truth (ASOT).
+                            </p>
+                            <a href="blog_asot.html" class="blog-link">Read More</a>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="portfolio-section" id="portfolio">
+                <h2 class="section-title">3D Design & Models</h2>
+                <p class="section-subtitle">Explore some of the 3D models and designs I've contributed to the Printables community.</p>
+                <div class="portfolio-content">
+                    <a href="https://www.printables.com/@theChef613_45837/models" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        View Models on Printables
+                    </a>
+                </div>
+            </section>
         </div>
-    </section>
+    </div>
 
     <!-- Skills Section -->
     <section class="skills-section" id="skills">
@@ -209,7 +252,7 @@
                             </svg>
                         </a>
                     </div>
-
+                    
                     <p class="email-display">yaakov.schefres@gmail.com</p>
                 </div>
                 
@@ -225,39 +268,9 @@
                     </nav>
                 </div>
             </div>
-
+            
             <p class="footer-text">&copy; 2024 Yaakov Schefres. All rights reserved.</p>
         </div>
     </footer>
-    <!-- Blog Section -->
-    <section class="blog-section" id="blog">
-        <div class="container">
-            <h2 class="section-title">Insights & Updates</h2>
-            <p class="section-subtitle">Latest thoughts on systems engineering and space technologies.</p>
-            <div class="blog-grid">
-                <article class="blog-card">
-                    <div class="blog-card-content">
-                        <span class="blog-date">June 17, 2024</span>
-                        <h3 class="blog-title">Systems Engineering Approach to Thermal Vacuum (TVAC) Testing</h3>
-                        <p>
-                            Navigating the complexities of Thermal Vacuum environments requires a rigorous Systems Engineering approach. 
-                            By integrating robust requirement management and iterative design loops, we can ensure that space systems 
-                            remain resilient under extreme temperature fluctuations and vacuum conditions. This post explores our 
-                            methodology for pre-test verification and risk mitigation in critical program segments.
-                        </p>
-                        <a href="blog_tvac.html" class="blog-link">Read More</a>
-                    </div>
-                </article>
-                <article class="blog-card">
-                    <div class="blog-card-content">
-                        <span class="blog-date">June 19, 2024</span>
-                        <h3 class="blog-title">Accelerating Engineering with Digital Ecosystems and Authoritative Source of Truth (ASOT)</h3>
-                        <p>
-                            In modern systems engineering, the greatest bottleneck is often not a lack of technical capability, but the friction caused by information silos. This post explores how leveraging digital ecosystems can accelerate the engineering process while maintaining a robust Authoritative Source of Truth (ASOT).
-                        </p>
-                        <a href="blog_asot.html" class="blog-link">Read More</a>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
+</body>
+</html>

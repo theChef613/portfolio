@@ -534,3 +534,25 @@ footer {
         padding: 1rem 0;
     }
 }
+
+.portfolio-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: start;
+}
+
+.portfolio-side-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+@media (max-width: 1024px) {
+    .portfolio-layout {
+        grid-template-columns: 1fr;
+    }
+    .portfolio-layout > .experience-section {
+        grid-column: span 1;
+    }
+}
