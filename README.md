@@ -19,4 +19,4 @@ The repository is maintained by an intelligent coding agent (Hermes) running on 
 - **Context-Aware Refactoring**: Ensuring consistency across the entire codebase (e.g., updating email addresses in all locations simultaneously).
 - **Documentation & Maintenance**: Automating routine tasks like updating `.gitignore` and refining site content.
 
-By leveraging Gemma 4 through Hermes Agent, the portfolio can be updated and managed with high precision and minimal manual intervention.
+By leveraging Hermes Agent, the portfolio can be updated and managed with high precision and minimal manual intervention.
