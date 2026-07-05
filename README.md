@@ -8,10 +8,8 @@ This website is actively maintained using an automated, AI-driven workflow:
 
 ### Tech Stack
 - **Frontend**: HTML5, CSS3, JavaScript
-- **Hosting**: Nextcloud/Local Environment
 - **AI Agent**: [Hermes Agent](https://hermes-agent.nousresearch.com/)
 - **Inference Engine**: [LM Studio](https://lmstudio.ai/)
-- **Model**: [Gemma 4](https://ai.google.dev/gemma)
 
 ### AI Workflow
 The repository is maintained by an intelligent coding agent (Hermes) running on a local instance of LM Studio. This setup allows for:
