@@ -2,6 +2,24 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     
+    // ===== Mobile Navigation Toggle =====
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (navToggle && navLinks) {
+        navToggle.addEventListener('click', () => {
+            const isOpen = navLinks.classList.toggle('open');
+            navToggle.setAttribute('aria-expanded', isOpen);
+        });
+
+        navLinks.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                navToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+    }
+
     // ===== Smooth Scrolling =====
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -25,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ===== Navbar Active State on Scroll =====
     const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+    const allNavLinks = document.querySelectorAll('.nav-link[href^="#"]');
 
     function updateActiveNavLink() {
         const scrollPosition = window.pageYOffset + 100; // Offset for fixed navbar
@@ -36,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const sectionId = section.getAttribute('id');
             
             if (scrollPosition >= sectionTop - 200) {
-                navLinks.forEach(link => {
+                allNavLinks.forEach(link => {
                     link.classList.remove('active');
                     
                     const href = link.getAttribute('href');
@@ -84,11 +102,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     window.addEventListener('scroll', () => {
         if (window.pageYOffset > 100) {
-            navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
-            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            navbar.classList.add('navbar-scrolled');
         } else {
-            navbar.style.boxShadow = '0 1px 2px rgba(0, 0, 0, 0.05)';
-            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            navbar.classList.remove('navbar-scrolled');
         }
     });
 
