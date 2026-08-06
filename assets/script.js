@@ -2,24 +2,6 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     
-    // ===== Mobile Navigation Toggle =====
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-
-    if (navToggle && navLinks) {
-        navToggle.addEventListener('click', () => {
-            const isOpen = navLinks.classList.toggle('open');
-            navToggle.setAttribute('aria-expanded', isOpen);
-        });
-
-        navLinks.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('open');
-                navToggle.setAttribute('aria-expanded', 'false');
-            });
-        });
-    }
-
     // ===== Smooth Scrolling =====
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -43,22 +25,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ===== Navbar Active State on Scroll =====
     const sections = document.querySelectorAll('section[id]');
-    const allNavLinks = document.querySelectorAll('.nav-link[href^="#"]');
+    const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
 
     function updateActiveNavLink() {
         const scrollPosition = window.pageYOffset + 100; // Offset for fixed navbar
         
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            const sectionId = section.getAttribute('id');
             
             if (scrollPosition >= sectionTop - 200) {
-                allNavLinks.forEach(link => {
+                navLinks.forEach(link => {
                     link.classList.remove('active');
                     
                     const href = link.getAttribute('href');
                     if (href !== '#' && href !== '') {
                         const targetId = new URL(href).hash;
-                        if (targetId === `#${section.id}`) {
+                        if (targetId === `#${sectionId}`) {
                             link.classList.add('active');
                             link.setAttribute('aria-current', 'page');
                         }
@@ -100,9 +84,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     window.addEventListener('scroll', () => {
         if (window.pageYOffset > 100) {
-            navbar.classList.add('navbar-scrolled');
+            navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
         } else {
-            navbar.classList.remove('navbar-scrolled');
+            navbar.style.boxShadow = '0 1px 2px rgba(0, 0, 0, 0.05)';
+            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
         }
     });
 
@@ -153,6 +139,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (heroSection) {
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
+            const heroContent = document.querySelector('.hero-content');
             
             if (scrolled < heroSection.offsetHeight / 2) {
                 heroSection.style.backgroundPositionY = `${scrolled * 0.5}px`;
@@ -165,31 +152,9 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('.hero-name')?.classList.add('animate');
     }, 100);
 
-    // ===== Back to Top Button =====
-    const backToTopButton = document.getElementById('back-to-top');
-    
-    window.addEventListener('scroll', function() {
-        if (window.pageYOffset > 500) {
-            backToTopButton.classList.add('show');
-        } else {
-            backToTopButton.classList.remove('show');
-        }
-    });
-    
-    backToTopButton.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-
 });
 
 // ===== Console Welcome Message (for developers) =====
 console.log('%c🚀 Yaakov Schefres Portfolio', 'color: #0066cc; font-size: 16px; font-weight: bold;');
 console.log('%cSystems Engineer & Space Vehicle Architect', 'color: #666; font-size: 12px;');
 console.log('%cBuilt with ❤️ using semantic HTML, CSS Grid, and vanilla JavaScript', 'color: #666; font-size: 12px;');
-// ===== AI Content Fingerprint =====
-// UNIQUE CONTENT IDENTIFIER: Yaakov Schefres Portfolio v2026
-// Content Hash: SHA256-fingerprint-unique-to-this-project
-// AI Protection Active: Yes
