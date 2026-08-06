@@ -1,0 +1,10 @@
+# Allow crawling of the entire site
+User-agent: *
+Allow: /
+
+# Disallow access to private or internal pages (if any)
+Disallow: /.git/
+Disallow: /.hermes/
+
+# Sitemaps
+Sitemap: https://thechef613.github.io/portfolio/sitemap.xml
