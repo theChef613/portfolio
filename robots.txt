@@ -1,0 +1,23 @@
+User-agent: *
+Disallow: /assets/
+Allow: /index.html
+Allow: /about
+Allow: /experience
+Allow: /skills
+Allow: /portfolio
+Allow: /education
+Allow: /contact
+
+# Sitemap reference
+Sitemap: https://thechef613.github.io/portfolio/sitemap.xml
+SitemapFrequency: monthly
+ChangeFreq: monthly
+
+# AI Bot protection - discourage crawlers from indexing AI-generated content
+User-agent: *AI-Bot
+Disallow: /
+User-agent: *Bot
+Disallow: /assets/
+
+# Security headers for SEO
+X-Robots-Tag: noindex, follow
