@@ -7,19 +7,21 @@
     <meta name="description" content="Portfolio of Yaakov Schefres — Systems Engineer and Space Vehicle Architect at Northrop Grumman with 10+ years of experience in mission-focused space programs, model-based engineering, and technical leadership.">
     <meta name="keywords" content="Yaakov Schefres, Systems Engineer, Space Vehicle Architect, Northrop Grumman, Model-Based Engineering, Aerospace Engineering">
     <meta name="author" content="Yaakov Schefres">
+    <link rel="canonical" href="https://thechef613.github.io/portfolio/index.html">
 
     <!-- Open Graph -->
+    <meta property="og:site_name" content="Yaakov Schefres">
     <meta property="og:title" content="Yaakov Schefres — Systems Engineer & Space Vehicle Architect">
     <meta property="og:description" content="Systems Engineer and Space Vehicle Architect with 10+ years of experience leading mission-focused space programs.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://thechef613.github.io/portfolio/index.html">
-    <meta property="og:image" content="assets/Arms Crossed.jpg">
+    <meta property="og:image" content="https://thechef613.github.io/portfolio/assets/arms-crossed.jpg">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Yaakov Schefres — Systems Engineer & Space Vehicle Architect">
     <meta name="twitter:description" content="Systems Engineer and Space Vehicle Architect with 10+ years of experience leading mission-focused space programs.">
-    <meta name="twitter:image" content="assets/Arms Crossed.jpg">
+    <meta name="twitter:image" content="https://thechef613.github.io/portfolio/assets/arms-crossed.jpg">
 
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230066cc'/><text x='50' y='68' font-family='Inter,sans-serif' font-size='48' font-weight='700' fill='white' text-anchor='middle'>YS</text></svg>">
@@ -28,6 +30,35 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Yaakov Schefres",
+        "url": "https://thechef613.github.io/portfolio/index.html",
+        "image": "https://thechef613.github.io/portfolio/assets/arms-crossed.jpg",
+        "jobTitle": "Systems Engineering Lead & Chief Architect",
+        "email": "mailto:yschefres@gmail.com",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Northrop Grumman"
+        },
+        "alumniOf": [
+            {
+                "@type": "CollegeOrUniversity",
+                "name": "University of Southern California"
+            },
+            {
+                "@type": "CollegeOrUniversity",
+                "name": "California Polytechnic State University, San Luis Obispo"
+            }
+        ],
+        "sameAs": [
+            "https://www.linkedin.com/in/yaakovschefres/"
+        ]
+    }
+    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -54,7 +85,10 @@
         <div class="hero-container">
             <!-- Profile Picture (left side) -->
             <div class="hero-profile">
-                <img src="assets/Arms Crossed.jpg" alt="Yaakov Schefres - Profile Picture" class="profile-picture">
+                <picture>
+                    <source srcset="assets/arms-crossed.webp" type="image/webp">
+                    <img src="assets/arms-crossed.jpg" alt="Yaakov Schefres - Profile Picture" class="profile-picture" width="600" height="600" fetchpriority="high">
+                </picture>
             </div>
 
             <!-- Hero Content (right side) -->
@@ -301,5 +335,6 @@
         </div>
     </footer>
 
+    <script src="assets/script.js"></script>
 </body>
 </html>

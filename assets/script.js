@@ -23,9 +23,28 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // ===== Mobile Navigation Toggle =====
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (navToggle && navLinks) {
+        navToggle.addEventListener('click', () => {
+            const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+            navToggle.setAttribute('aria-expanded', String(!isExpanded));
+            navLinks.classList.toggle('active');
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navToggle.setAttribute('aria-expanded', 'false');
+                navLinks.classList.remove('active');
+            });
+        });
+    }
+
     // ===== Navbar Active State on Scroll =====
     const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+    const navLinkElements = document.querySelectorAll('.nav-link[href^="#"]');
 
     function updateActiveNavLink() {
         const scrollPosition = window.pageYOffset + 100; // Offset for fixed navbar
@@ -36,16 +55,15 @@ document.addEventListener('DOMContentLoaded', function() {
             const sectionId = section.getAttribute('id');
             
             if (scrollPosition >= sectionTop - 200) {
-                navLinks.forEach(link => {
+                navLinkElements.forEach(link => {
                     link.classList.remove('active');
                     
                     const href = link.getAttribute('href');
-                    if (href !== '#' && href !== '') {
-                        const targetId = new URL(href).hash;
-                        if (targetId === `#${sectionId}`) {
-                            link.classList.add('active');
-                            link.setAttribute('aria-current', 'page');
-                        }
+                    const hashIndex = href.indexOf('#');
+                    const targetId = hashIndex >= 0 ? href.slice(hashIndex) : '';
+                    if (targetId === `#${sectionId}`) {
+                        link.classList.add('active');
+                        link.setAttribute('aria-current', 'page');
                     }
                 });
             }
