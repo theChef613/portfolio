@@ -1,5 +1,5 @@
 User-agent: *
-Disallow: /assets/
+# Allow: /assets/
 
 # Sitemap reference
 Sitemap: https://thechef613.github.io/portfolio/sitemap.xml
