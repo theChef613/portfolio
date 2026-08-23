@@ -94,6 +94,23 @@ body {
 }
 
 /* ===== Typography ===== */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: -10000px;
+    background: var(--color-primary);
+    color: white;
+    padding: 1rem;
+    z-index: 10000;
+    border: none;
+}
+
+.skip-link:focus {
+    top: 0;
+    left: 0;
+    border: 3px solid white;
+}
+
 h1, h2, h3, h4 {
     font-weight: 600;
     line-height: 1.2;
@@ -901,7 +918,7 @@ footer {
     text-align: center;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 992px) {
     .portfolio-layout {
         grid-template-columns: 1fr;
     }
