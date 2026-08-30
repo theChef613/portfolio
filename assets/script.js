@@ -12,7 +12,8 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
-                const navHeight = document.querySelector('.navbar').offsetHeight;
+                const navContainer = document.querySelector('.nav-container');
+                const navHeight = navContainer ? navContainer.offsetHeight : 0;
                 const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
                 
                 window.scrollTo({
@@ -48,24 +49,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateActiveNavLink() {
         const scrollPosition = window.pageYOffset + 100; // Offset for fixed navbar
+        let activeId = null;
         
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
             const sectionId = section.getAttribute('id');
             
             if (scrollPosition >= sectionTop - 200) {
-                navLinkElements.forEach(link => {
-                    link.classList.remove('active');
-                    
-                    const href = link.getAttribute('href');
-                    const hashIndex = href.indexOf('#');
-                    const targetId = hashIndex >= 0 ? href.slice(hashIndex) : '';
-                    if (targetId === `#${sectionId}`) {
-                        link.classList.add('active');
-                        link.setAttribute('aria-current', 'page');
-                    }
-                });
+                activeId = sectionId;
+            }
+        });
+        
+        navLinkElements.forEach(link => {
+            link.classList.remove('active');
+            link.removeAttribute('aria-current');
+            
+            if (activeId) {
+                const href = link.getAttribute('href');
+                const hashIndex = href.indexOf('#');
+                const targetId = hashIndex >= 0 ? href.slice(hashIndex) : '';
+                if (targetId === `#${activeId}`) {
+                    link.classList.add('active');
+                    link.setAttribute('aria-current', 'page');
+                }
             }
         });
     }
@@ -99,16 +105,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ===== Navbar Shadow on Scroll =====
     const navbar = document.querySelector('.navbar');
-    
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 100) {
-            navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
-            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-        } else {
-            navbar.style.boxShadow = '0 1px 2px rgba(0, 0, 0, 0.05)';
-            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-        }
-    });
+
+    if (navbar) {
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 0) {
+                navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                navbar.style.boxShadow = '0 1px 2px rgba(0, 0, 0, 0.05)';
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            }
+        });
+    }
 
     // ===== Print Button =====
     const printButton = document.createElement('button');
@@ -139,31 +147,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ===== Keyboard Navigation Enhancement =====
-    let previousFocusedElement = null;
-    
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Tab') {
             if (e.shiftKey || e.ctrlKey) {
                 // Ctrl+Shift+Tab shows focus outline for better accessibility
                 document.body.style.outlineStyle = 'auto';
             }
-        } else if (e.key === 'Enter' && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'A') {
-            // Remove default Enter behavior on text fields
         }
     });
-
-    // ===== Hero Section Parallax Effect (Subtle) =====
-    const heroSection = document.querySelector('.hero');
-    if (heroSection) {
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const heroContent = document.querySelector('.hero-content');
-            
-            if (scrolled < heroSection.offsetHeight / 2) {
-                heroSection.style.backgroundPositionY = `${scrolled * 0.5}px`;
-            }
-        });
-    }
 
     // ===== Initialize with nice animation timing =====
     setTimeout(() => {
