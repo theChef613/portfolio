@@ -387,10 +387,14 @@ section {
 /* ===== Blog Split: text + video side column ===== */
 .blog-split {
     display: grid;
-    grid-template-columns: 1fr 380px;
+    grid-template-columns: 2fr 380px;
     gap: var(--spacing-lg);
     align-items: start;
     margin: var(--spacing-md) 0 var(--spacing-lg);
+}
+
+.blog-split-text h3 {
+    white-space: nowrap;
 }
 
 .blog-split-text p:last-child {
