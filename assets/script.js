@@ -118,34 +118,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ===== Print Button =====
-    const printButton = document.createElement('button');
-    printButton.innerHTML = '🖨️ Print Portfolio';
-    printButton.style.cssText = `
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        padding: 12px 20px;
-        background: var(--color-primary);
-        color: white;
-        border: none;
-        border-radius: var(--radius-md);
-        cursor: pointer;
-        font-weight: 500;
-        box-shadow: var(--shadow-lg);
-        transition: all var(--transition-fast);
-        z-index: 999;
-    `;
-    
-    printButton.addEventListener('click', () => {
-        window.print();
-    });
-
-    // Only add button on non-print environments
-    if (window.location.protocol !== 'file:') {
-        document.body.appendChild(printButton);
-    }
-
     // ===== Keyboard Navigation Enhancement =====
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Tab') {
