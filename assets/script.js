@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinkElements = document.querySelectorAll('.nav-link[href^="#"]');
 
     function updateActiveNavLink() {
-        const scrollPosition = window.pageYOffset + 100; // Offset for fixed navbar
+        const scrollPosition = window.pageYOffset + 100;
         let activeId = null;
         
         sections.forEach(section => {
@@ -76,8 +76,35 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    window.addEventListener('scroll', updateActiveNavLink);
-    updateActiveNavLink(); // Call once on load
+    // ===== Navbar Shadow on Scroll =====
+    const navbar = document.querySelector('.navbar');
+
+    // Throttle scroll events with requestAnimationFrame
+    let ticking = false;
+
+    function onScroll() {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                updateActiveNavLink();
+
+                if (navbar) {
+                    if (window.pageYOffset > 0) {
+                        navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+                        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                    } else {
+                        navbar.style.boxShadow = '0 1px 2px rgba(0, 0, 0, 0.05)';
+                        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                    }
+                }
+
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }
+
+    window.addEventListener('scroll', onScroll);
+    onScroll(); // Call once on load
 
     // ===== Fade-in Animation on Scroll =====
     const animatedElements = document.querySelectorAll('.exp-card, .education-item');
@@ -101,31 +128,6 @@ document.addEventListener('DOMContentLoaded', function() {
         element.style.transform = 'translateY(20px)';
         element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         animateOnScrollObserver.observe(element);
-    });
-
-    // ===== Navbar Shadow on Scroll =====
-    const navbar = document.querySelector('.navbar');
-
-    if (navbar) {
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 0) {
-                navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
-                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-            } else {
-                navbar.style.boxShadow = '0 1px 2px rgba(0, 0, 0, 0.05)';
-                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-            }
-        });
-    }
-
-    // ===== Keyboard Navigation Enhancement =====
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Tab') {
-            if (e.shiftKey || e.ctrlKey) {
-                // Ctrl+Shift+Tab shows focus outline for better accessibility
-                document.body.style.outlineStyle = 'auto';
-            }
-        }
     });
 
     // ===== Initialize with nice animation timing =====
